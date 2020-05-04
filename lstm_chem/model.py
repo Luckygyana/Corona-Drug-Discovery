@@ -4,7 +4,7 @@ from tensorflow.keras import Sequential
 from tensorflow.keras.models import model_from_json
 from tensorflow.keras.layers import LSTM, Dense
 from tensorflow.keras.initializers import RandomNormal
-from smiletokenizer import SmilesTokenizer
+from lstm_chem.smiletokenizer import SmilesTokenizer
 
 
 class LSTMChem(object):
