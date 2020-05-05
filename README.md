@@ -21,7 +21,7 @@ Together these two data sets represented about 4 millions SMILES. After cleaning
 Schematic of model training(**left**) and compund design by sampling(**right**)
 
 
-![all text](https://d3i71xaburhd42.cloudfront.net/517a488f06577401422cf7e03647ac6148ef4e44/2-Figure2-1.png)
+![all text](https://miro.medium.com/max/670/1*oa8X-Rn9AtmO2ZBEg76DTg.jpeg)
 
 ## Model Summary 
 Model: Sequential
@@ -39,13 +39,13 @@ Non-Trainable parameters: 0
 After completing training, I used the new network to generate **10,000 SMILES**. I would have liked to generate more to start with a wider set of molecules to evaluate before narrowing in on molecules that bind well, but time was a constraint as the generation process takes several hours.
 
 I evaluated relative performance of the original repository network vs my new network along two metrics from the original repository, and added a third metric of my own creation:
- ● **Validity**: of the total number of generated smiles, percentage that are actually valid smiles for molecules
-  ● **Uniqueness**: of the total valid number of generated smiles, percentage that are not duplicates 
-  ● **Originality**: of the total number of valid generated smiles, percentage that are brand new creations that do not appear in the training data.
+● **Validity**: of the total number of generated smiles, percentage that are actually valid smiles for molecules
+● **Uniqueness**: of the total valid number of generated smiles, percentage that are not duplicates 
+● **Originality**: of the total number of valid generated smiles, percentage that are brand new creations that do not appear in the training data.
  
- Original LSTM_Chem network benchmarks: 
- ● *Validity*: 62.3% 
- ● *Uniqueness*: 99.8% 
+Original LSTM_Chem network benchmarks: 
+● *Validity*: 62.3% 
+● *Uniqueness*: 99.8% 
 
 My newly trained network metrics: 
 ● *Validity*: 97.0% 
