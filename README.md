@@ -33,9 +33,10 @@ Model: Sequential
 | lstm1(LSTM)     | (None,None,256) |525312 |
 | dense(Dense)    |(None,None,52)  |13364  |
 
-
 Total parameters: 855092
+
 Trainable parameters: 855092
+
 Non-Trainable parameters: 0
 
 ## Generating Initial Universe of SMILES
