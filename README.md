@@ -10,10 +10,10 @@ The original network only trained on ~450k unique **SMILES**. My first goal was 
 
 I combined data sets from two source:
 
- 1. [Moses Data Set]([https://github.com/molecularsets/moses](https://github.com/molecularsets/moses))
- 2. [ChEMBL Data Set]([https://www.ebi.ac.uk/chembl/](https://www.ebi.ac.uk/chembl/))
+ 1. [Moses Data Set](https://github.com/molecularsets/moses)
+ 2. [ChEMBL Data Set](https://www.ebi.ac.uk/chembl/)
  
-Together these two data sets represented about 4 millions SMILES. After cleaning the SMILES using the [clean_smiles.py]([https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/clean_smiles.py](https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/clean_smiles.py)) script and only retaining SMILES between 34 to 128 characters in length, [./dataset_cleaned.smi]([https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/dataset_cleaned.smi](https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/dataset_cleaned.smi)) contains the final list of ~4.8 million smiles on which the initial network was trained.
+Together these two data sets represented about 4 millions SMILES. After cleaning the SMILES using the [clean_smiles.py](https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/clean_smiles.py) script and only retaining SMILES between 34 to 128 characters in length, [./dataset_cleaned.smi](https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/dataset_cleaned.smi) contains the final list of ~4.8 million smiles on which the initial network was trained.
 
  
 ## Model Architecture
@@ -57,7 +57,7 @@ My newly trained network metrics:
 2. *Uniqueness*: 99.8% 
 3. *Originality*: 89.0% 
 
-Originally generated 100 smiles are saved to [./generations0.smi]([https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/generations0.smi](https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/generations0.smi))
+Originally generated 100 smiles are saved to [./generations0.smi](https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/generations0.smi)
 
 ## Finding Top Candidates from Initial Universe of SMILES
 
@@ -89,6 +89,6 @@ I repeated the above steps across 10 generations, each time using the best fit +
 
  
 1. Have a domain expert analyze top findings for fit and/or find the molecules in the universe of existing approved drugs which are most similar to top findings and evaluate them for fit.
- 2. According to this [paper]([https://arxiv.org/pdf/1703.07076.pdf](https://arxiv.org/pdf/1703.07076.pdf)), the baseline model may be further improved by training on a universe of enumerated SMILES, not just canonical SMILES.
+ 2. According to this [paper](https://arxiv.org/pdf/1703.07076.pdf), the baseline model may be further improved by training on a universe of enumerated SMILES, not just canonical SMILES.
   3. Code needs refactoring.
 
