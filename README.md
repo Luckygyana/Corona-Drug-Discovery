@@ -21,6 +21,8 @@ Together these two data sets represented about 4 millions SMILES. After cleaning
 Schematic of model training(**left**) and compund design by sampling(**right**)
 
 
+
+
 ![all text](https://miro.medium.com/max/670/1*oa8X-Rn9AtmO2ZBEg76DTg.jpeg)
 
 ## Model Summary 
@@ -30,6 +32,8 @@ Model: Sequential
 | lstm(LSTM)       | (None,None,256)   | 316416       |
 | lstm1(LSTM)     | (None,None,256) |525312 |
 | dense(Dense)    |(None,None,52)  |13364  |
+
+
 Total parameters: 855092
 Trainable parameters: 855092
 Non-Trainable parameters: 0
@@ -39,18 +43,18 @@ Non-Trainable parameters: 0
 After completing training, I used the new network to generate **10,000 SMILES**. I would have liked to generate more to start with a wider set of molecules to evaluate before narrowing in on molecules that bind well, but time was a constraint as the generation process takes several hours.
 
 I evaluated relative performance of the original repository network vs my new network along two metrics from the original repository, and added a third metric of my own creation:
-● **Validity**: of the total number of generated smiles, percentage that are actually valid smiles for molecules
-● **Uniqueness**: of the total valid number of generated smiles, percentage that are not duplicates 
-● **Originality**: of the total number of valid generated smiles, percentage that are brand new creations that do not appear in the training data.
+  1.  **Validity**: of the total number of generated smiles, percentage that are actually valid smiles for molecules
+  2.  **Uniqueness**: of the total valid number of generated smiles, percentage that are not duplicates 
+  3.  **Originality**: of the total number of valid generated smiles, percentage that are brand new creations that do not appear in the training data.
  
-Original LSTM_Chem network benchmarks: 
-● *Validity*: 62.3% 
-● *Uniqueness*: 99.8% 
+ Original LSTM_Chem network benchmarks: 
+ 1. *Validity*: 62.3% 
+ 2. *Uniqueness*: 99.8% 
 
 My newly trained network metrics: 
-● *Validity*: 97.0% 
-● *Uniqueness*: 99.8% 
-● *Originality*: 89.0% 
+1. *Validity*: 97.0% 
+2. *Uniqueness*: 99.8% 
+3. *Originality*: 89.0% 
 
 Originally generated 100 smiles are saved to [./generations0.smi]([https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/generations0.smi](https://github.com/Luckygyana/Corona-Drug-Discovery/blob/master/generations0.smi))
 
@@ -83,7 +87,7 @@ I repeated the above steps across 10 generations, each time using the best fit +
 ## Next Steps
 
  
-● Have a domain expert analyze top findings for fit and/or find the molecules in the universe of existing approved drugs which are most similar to top findings and evaluate them for fit.
-● According to this [paper]([https://arxiv.org/pdf/1703.07076.pdf](https://arxiv.org/pdf/1703.07076.pdf)), the baseline model may be further improved by training on a universe of enumerated SMILES, not just canonical SMILES.
-● Code needs refactoring.
+1. Have a domain expert analyze top findings for fit and/or find the molecules in the universe of existing approved drugs which are most similar to top findings and evaluate them for fit.
+ 2. According to this [paper]([https://arxiv.org/pdf/1703.07076.pdf](https://arxiv.org/pdf/1703.07076.pdf)), the baseline model may be further improved by training on a universe of enumerated SMILES, not just canonical SMILES.
+  3. Code needs refactoring.
 
